@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <script
+      type="text/javascript"
+      src="https://test.msg91.com/hello-new/assets/widget/chat-widget.js"
+    ></script>
+  </head>
+  
+  <body>
+    {% if request.user.is_authenticated %}
+
+    <h3> Hello {{ request.user.username }}  <a href="{% url 'logout' %}">     logout     </a></h3> 
+    
+    {% endif %}
+    <button onclick="initLoggedWidget()">Widget dikhaya jaye</button>
+    <script>
+  
+      function initLoggedWidget() {
+        let loggedInClient = {
+        widgetToken: "{{ widget_token }}",
+        unique_id: "{{ request.user.username }}",
+        user_hash: "{{ user_hash }}",
+      }
+      console.log(loggedInClient)
+        initChatWidget(loggedInClient, 0);
+      }
+    </script>
+  </body>
+  
+</html>

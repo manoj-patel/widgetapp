@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-y5eio!ce60^_w(p^)o_#c!dcz97_1x=sj56t+_p)ac)j6^p-d9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['testingappwidget.herokuapp.com']
+ALLOWED_HOSTS = ['testingappwidget.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'user.apps.UserConfig',
     'home.apps.HomeConfig',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
